@@ -1,32 +1,10 @@
 import { Layout, Menu, MenuProps } from "antd";
 import { Outlet } from "react-router-dom";
+import { adminSidebarItems } from "../../routes/admin.routes";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items: MenuProps["items"] = [
-  {
-    key: "1",
-    label: "Dashboard",
-  },
-  {
-    key: "2",
-    label: "Profile",
-  },
-  {
-    key: "3",
-    label: "User Management",
-    children: [
-      {
-        key: "11",
-        label: "Create User",
-      },
-      {
-        key: "12",
-        label: "Create Admin",
-      },
-    ],
-  },
-];
+const items: MenuProps["items"] = adminSidebarItems;
 
 const MainLayout = () => {
   return (
