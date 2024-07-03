@@ -70,7 +70,6 @@ export const adminSidebarItems = adminPaths.reduce(
 );
 
 // programmatically way
-
 export const adminRoutes = adminPaths.reduce((acc: TRoute[], item) => {
   if (item.path && item.element) {
     acc.push({
