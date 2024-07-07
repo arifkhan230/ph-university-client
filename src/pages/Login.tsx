@@ -14,14 +14,13 @@ const Login = () => {
       password: "admin1234",
     },
   });
-  const [login, { error }] = useLoginMutation();
+  const [login] = useLoginMutation();
 
   // console.log("data =>", data);
   // console.log("error =>", error);
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: { id: string; password: string }) => {
     const res = await login(data).unwrap();
-    console.log(res);
 
     const user = verifyToken(res?.data?.accessToken);
     console.log(user);
